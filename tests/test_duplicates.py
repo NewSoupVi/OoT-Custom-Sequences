@@ -83,7 +83,7 @@ def main():
         sys.exit(0)
 
     validate_song_name_unicity()
-    input("Press Enter to quit")
+    #input("Press Enter to quit")
 
 
 if __name__ == '__main__':
