@@ -58,6 +58,9 @@ def compare_song(base_song, song_list):
             duplicate.append(song)
 
     return duplicate
+    
+def test_answer():
+    assert 3 == 3
 
 
 class ArgumentDefaultsHelpFormatter(argparse.RawTextHelpFormatter):
