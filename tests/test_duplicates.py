@@ -67,21 +67,15 @@ class ArgumentDefaultsHelpFormatter(argparse.RawTextHelpFormatter):
 
 
 def main():
-    parser = argparse.ArgumentParser(formatter_class=ArgumentDefaultsHelpFormatter)
-    parser.add_argument('--ci', help='Use while running this in a GitHub action.', action='store_true')
-    args = parser.parse_args()
-
-    if args.ci:
-        duplicates = get_duplicate_songs()
+    duplicates = get_duplicate_songs()
         
-        message = f"Duplicate song names found: {len(duplicates)}\n" + json.dumps(duplicate, indent=2)
+    message = f"Duplicate song names found: {len(duplicates)}\n" + json.dumps(duplicate, indent=2)
         
-        assert duplicates,message
+    assert duplicates,message
         
-        print("No duplicates found.")
-        sys.exit(0)
-
-    validate_song_name_unicity()
+    print("No duplicates found.")
+    sys.exit(0)
+    
     #input("Press Enter to quit")
 
 
