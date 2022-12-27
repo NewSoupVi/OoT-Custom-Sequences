@@ -73,12 +73,11 @@ def main():
 
     if args.ci:
         duplicates = get_duplicate_songs()
-        if duplicates:
-            print(f"Duplicate song names found: {len(duplicates)}\n")
-            for duplicate in duplicates:
-                print(json.dumps(duplicate, indent=2))
-            assert False
-            sys.exit(1)
+        
+        message = f"Duplicate song names found: {len(duplicates)}\n" + json.dumps(duplicate, indent=2)
+        
+        assert duplicates,message
+        
         print("No duplicates found.")
         sys.exit(0)
 
