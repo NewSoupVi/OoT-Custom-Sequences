@@ -58,9 +58,6 @@ def compare_song(base_song, song_list):
             duplicate.append(song)
 
     return duplicate
-    
-def test_answer():
-    assert 3 == 3
 
 
 class ArgumentDefaultsHelpFormatter(argparse.RawTextHelpFormatter):
@@ -80,6 +77,7 @@ def main():
             print(f"Duplicate song names found: {len(duplicates)}\n")
             for duplicate in duplicates:
                 print(json.dumps(duplicate, indent=2))
+            assert False
             sys.exit(1)
         print("No duplicates found.")
         sys.exit(0)
@@ -89,4 +87,7 @@ def main():
 
 
 if __name__ == '__main__':
+    main()
+    
+def test_duplicates():
     main()
